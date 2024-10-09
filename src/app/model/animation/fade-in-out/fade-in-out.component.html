@@ -1,0 +1,5 @@
+<button (click)="isOpen=!isOpen">Button</button>
+
+<div [@fadeInOut]="isOpen?'in':'out'" *ngFor="let line of html" [innerHTML]="line">
+
+</div>
