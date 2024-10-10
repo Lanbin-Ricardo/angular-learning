@@ -1,5 +1,10 @@
 <button (click)="isOpen=!isOpen">Button</button>
 
 <div [@fadeInOut]="isOpen?'in':'out'" *ngFor="let line of html" [innerHTML]="line">
+</div>
 
+
+<button (click)="clickFadeInLineByLine()">Fade in line by line</button>
+
+<div [@fadeInOut]="currentLine >= i?'in':'out'" *ngFor="let line of html; let i = index" [innerHTML]="line">
 </div>

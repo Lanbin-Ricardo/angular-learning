@@ -10,10 +10,10 @@ import { Component } from '@angular/core';
       state('in', style({opacity:1})),
       state('out', style({opacity:0})),
       transition('in => out', [
-        animate('1000ms ease-in')
+        animate('2000ms ease-in')
       ]),
       transition('out => in', [
-        animate('1000ms ease-out')
+        animate('2000ms ease-out')
       ])
     ])
   ]
@@ -32,4 +32,20 @@ export class FadeInOutComponent {
     '</ul>',
     '<p>Basel III has been implemented gradually by various countries. Its goal is to create a safer and more stable financial system worldwide.</p>'
   ]
+
+
+  currentLine: number = -1;
+  fadeInOut() {
+    let intervalId = setInterval(() => {
+      this.currentLine = (this.currentLine + 1);
+      console.log(intervalId);
+      if(this.currentLine > this.html.length) {
+        clearInterval(intervalId);
+      }
+    }, 300);
+  }
+
+  clickFadeInLineByLine() {
+    this.fadeInOut();
+  }
 }
