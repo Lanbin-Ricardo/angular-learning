@@ -8,3 +8,12 @@
 
 <div [@fadeInOut]="currentLine >= i?'in':'out'" *ngFor="let line of html; let i = index" [innerHTML]="line">
 </div>
+
+<button (click)="clickMarkDownFadeInLineByLine()">Markdown Fade in line by line</button>
+<div [@fadeInOut]="currentMarkDownLine >= i?'in':'out'" *ngFor="let line of markdownLines; let i = index">
+    <markdown mermaid [data]="line"></markdown>
+</div>
+
+
+
+
